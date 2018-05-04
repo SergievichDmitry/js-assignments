@@ -22,7 +22,7 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
-    throw new Error('Not implemented');
+    return width*height;
 }
 
 
@@ -38,7 +38,7 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCicleCircumference(radius) {
-    throw new Error('Not implemented');
+    return(2*radius*Math.PI);
 }
 
 /**
@@ -54,7 +54,7 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-    throw new Error('Not implemented');
+    return(value1 / 2 + value2 / 2);
 }
 
 /**
@@ -73,7 +73,7 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    return Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
 }
 
 /**
@@ -89,7 +89,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-    throw new Error('Not implemented');
+    return((-b) / a);
 }
 
 
@@ -127,7 +127,9 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-    throw new Error('Not implemented');
+    while(value > 9){
+        value%=10;}
+    return (value);
 }
 
 
@@ -143,7 +145,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-    throw new Error('Not implemented');
+    return(value);
 }
 
 /**
@@ -160,7 +162,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a,b,c) {
-    throw new Error('Not implemented');
+    return (Math.sqrt(a*a + b*b + c*c));
 }
 
 /**
@@ -181,7 +183,47 @@ function getParallelipidedDiagonal(a,b,c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-    throw new Error('Not implemented');
+    var p1 = 0;
+    var p2 = 0;
+    if (pow == 1){
+        p1 = num - (num%10);
+        p2= num /10;
+        while (p2 >= 10)
+            p2%=10;
+        if (p2 >=5){
+            p1+=10;
+            return (p1);
+        }
+        else {
+            return (p1);
+        }}
+
+        if (pow == 2){
+            p1 = (num - (num%100));
+            p2= num /100;
+            while (p2 >= 10)
+                p2%=10;
+            if (p2 >=5){
+                p1+=100;
+                return (p1);
+            }
+            else {
+                return (p1);
+            }}
+
+        if (pow == 3){
+                p1 = (num - (num%1000));
+                p2= num /1000;
+                if (p2 >=5){
+                    p1+=1000;
+                    return (p1);
+                }
+                else {
+                    return (p1);
+                }}
+        if (pow == 0)
+            return (num);
+
 }
 
 /**
@@ -202,7 +244,15 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-    throw new Error('Not implemented');
+    var a = 2;
+    var b = 0;
+    while(a < n){
+        if (n%a == 0){
+            return false;
+        }
+        a++;
+    }
+    return true;
 }
 
 /**
