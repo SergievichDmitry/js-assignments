@@ -83,7 +83,7 @@ function extractNameFromTemplate(value) {
  *   'John Doe'  => 'J'
  *   'cat'       => 'c'
  */
-function getFirstChar(value) {;
+function getFirstChar(value) {
     return(value.charAt(0))
 }
 
@@ -174,7 +174,7 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-    return(str.split(';', ));
+    return(str.split(';'));
 }
 
 /**
