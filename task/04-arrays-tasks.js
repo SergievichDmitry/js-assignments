@@ -221,7 +221,7 @@ function getTail(arr, n) {
  *    +'30,31,32,33,34'
  */
 function toCsvText(arr) {
-   throw new Error('Not implemented');
+   return (arr.join('\n'));
 }
 
 /**
@@ -259,7 +259,12 @@ function toArrayOfSquares(arr) {
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
 function getMovingSum(arr) {
-   throw new Error('Not implemented');
+    var mas = [];
+    var last = arr.reduce((sum, curr) => {
+        mas.push(sum);
+        return sum+curr;
+    })
+    return mas.concat(last);
 }
 
 /**
@@ -298,7 +303,11 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-   throw new Error('Not implemented');
+   var a = arr.length;
+   var mas = [].concat(...arr.map((element, index) => {
+       return new Array(index+1).fill(element);
+   }));
+   return mas;
 }
 
 
@@ -357,7 +366,10 @@ function getPositivesCount(arr) {
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
 function sortDigitNamesByNumericOrder(arr) {
-   throw new Error('Not implemented');
+    let numbers = [ 'zero','one','two','three','four','five','six','seven','eight','nine' ];
+    return arr.sort((a, b) => {
+        return (numbers.indexOf(a) - numbers.indexOf(b));
+    })
 }
 
 /**
@@ -437,7 +449,7 @@ function findAllOccurences(arr, item) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
-   throw new Error('Not implemented');
+    return (arr.join());
 }
 
 
@@ -505,7 +517,8 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-    throw new Error('Not implemented');
+    return new Array(end - start + 1).fill(start).map((item, index) => item+index);
+
 }
 
 /**
@@ -520,7 +533,7 @@ function getIntervalArray(start, end) {
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
 function distinct(arr) {
-   throw new Error('Not implemented');
+   return Array.from(new Set(arr));
 }
 
 /**
