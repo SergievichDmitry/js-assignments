@@ -33,7 +33,25 @@
  *
  */
 function* get99BottlesOfBeer() {
-    throw new Error('Not implemented');
+    var index = 99;
+    var line = true;
+    while (index > 0){
+        if (line){
+            yield `${index} bottle${index > 1 ? 's' : ''} of beer on the wall, ${index} bottle${index > 1 ? 's' : ''} of beer.`;
+        }
+        else{
+            --index;
+            if (index){
+                yield `Take one down and pass it around, ${index} bottle${index > 1 ? 's' : ''} of beer on the wall.`
+            }
+            else{
+                yield 'Take one down and pass it around, no more bottles of beer on the wall.';
+            }
+        }
+        line = !line;
+    }
+    yield 'No more bottles of beer on the wall, no more bottles of beer.';
+    yield 'Go to the store and buy some more, 99 bottles of beer on the wall.';
 }
 
 
